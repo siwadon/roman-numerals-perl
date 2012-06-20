@@ -25,3 +25,11 @@ is_deeply(\@got, \@expect, "50  is (50, 0)");
 @got    = $roman->get_place_values('234');
 @expect = (200, 30, 4);
 is_deeply(\@got, \@expect, "200 is (200, 30, 4)");
+
+is($roman->to_roman(1),    "I");
+is($roman->to_roman(5),    "V");
+is($roman->to_roman(10),   "X");
+is($roman->to_roman(50),   "L");
+is($roman->to_roman(100),  "C");
+is($roman->to_roman(500),  "D");
+is($roman->to_roman(1000), "M");
