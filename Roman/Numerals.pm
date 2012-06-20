@@ -12,6 +12,7 @@ $obj->convert(1999) will return "MCMXCIX"
 
 
 =head1 AUTHOR
+
 Siwadon Saosoong
 
 =cut
@@ -47,6 +48,41 @@ sub get_place_values {
 	}
 
 	return @values;
+}
+
+=head2 to_roman
+
+Convert Arabic number to Roman
+
+=cut
+
+sub to_roman {
+	my ($self, $number) = @_;
+	my $result = "";
+
+	if ($number == 1) {
+		$result = "I";
+	}
+	elsif ($number == 5) {
+		$result = "V";
+	}
+	elsif ($number == 10) {
+		$result = "X";
+	}
+	elsif ($number == 50) {
+		$result = "L";
+	}
+	elsif ($number == 100) {
+		$result = "C";
+	}
+	elsif ($number == 500) {
+		$result = "D";
+	}
+	elsif ($number == 1000) {
+		$result = "M";
+	}
+
+	return $result;
 }
 
 1;
