@@ -1,6 +1,26 @@
 #!/usr/bin/perl
 
+=head1 NAME
+
+Roman::Numerals - Convert Arabic numerals to Roman numerals
+
+
+=head1 SYNOPSIS
+
+$obj = new Roman::Numerals();
+$obj->convert(1999) will return "MCMXCIX"
+
+
+=head1 AUTHOR
+Siwadon Saosoong
+
+=cut
+
 package Roman::Numerals;
+
+=head2 constructor
+
+=cut
 
 sub new {
 	my $class = shift;
@@ -9,6 +29,10 @@ sub new {
 	bless $self, $class;
 	return $self;
 }
+
+=head2 get_place_values
+
+=cut
 
 sub get_place_values {
 	my ($self, $number) = @_;
