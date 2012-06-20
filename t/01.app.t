@@ -1,4 +1,7 @@
 #!/usr/bin/perl
 
 use Test::More qw(no_plan);
-use_ok(Roman::Numerals);
+
+BEGIN {
+	use_ok(Roman::Numerals);
+}
