@@ -53,12 +53,21 @@ sub get_place_values {
 =head2 to_roman
 
 Convert Arabic number to Roman
+Parameter can be only
+- 1000, 2000, 3000
+- 100, 200, 300, .., 900
+- 10, 20, 30, .., 90
+- 1, 2, 3, .., 9
 
 =cut
 
 sub to_roman {
 	my ($self, $number) = @_;
 	my $result = "";
+
+	if ($number <= 0 or $number > 3000) {
+		return 0;
+	}
 
 	if ($number == 1) {
 		$result = "I";
