@@ -57,10 +57,15 @@ isnt($roman->to_roman(150),  "LLL", "150  != LLL");
 isnt($roman->to_roman(1000), "DD",  "1000 != DD");
 isnt($roman->to_roman(1500), "DDD", "1500 != DDD");
 
-# I can be subtracted from V and X
+# I can be subtracted from V and X only
 
 is($roman->to_roman(4), "IV", "4 -> IV");
 is($roman->to_roman(9), "IX", "9 -> IX");
+
+isnt($roman->to_roman(49),  "IL", "49  != IL");
+isnt($roman->to_roman(99),  "IC", "99  != IC");
+isnt($roman->to_roman(499), "ID", "499 != ID");
+isnt($roman->to_roman(999), "IM", "999 != IM");
 
 # X can be subtracted from L and C
 
