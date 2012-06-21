@@ -71,3 +71,11 @@ is($roman->to_roman(90), "XC", "90 -> XC");
 
 is($roman->to_roman(400), "CD", "400 -> CD");
 is($roman->to_roman(900), "CM", "900 -> CM");
+
+# V cannot be subtracted
+
+isnt($roman->to_roman(5),   "VX", "5   != VX");
+isnt($roman->to_roman(45),  "VL", "45  != VL");
+isnt($roman->to_roman(95),  "VC", "95  != VC");
+isnt($roman->to_roman(495), "VD", "495 != VD");
+isnt($roman->to_roman(995), "VM", "995 != VM");
