@@ -115,3 +115,15 @@ is($roman->to_roman(80), "LXXX", "80 -> LXXX");
 is($roman->to_roman(600), "DC",   "600 -> DC");
 is($roman->to_roman(700), "DCC",  "700 -> DCC");
 is($roman->to_roman(800), "DCCC", "800 -> DCCC");
+
+# Converting begin
+is($roman->convert(1),  "I",    "1  -> I");
+is($roman->convert(2),  "II",   "2  -> II");
+is($roman->convert(3),  "III",  "3  -> III");
+is($roman->convert(4),  "IV",   "4  -> IV");
+is($roman->convert(5),  "V",    "5  -> V");
+is($roman->convert(6),  "VI",   "6  -> VI");
+is($roman->convert(7),  "VII",  "7  -> VII");
+is($roman->convert(8),  "VIII", "8  -> VIII");
+is($roman->convert(9),  "IX",   "9  -> IX");
+is($roman->convert(10), "X",    "10 -> X");
