@@ -146,3 +146,11 @@ is($roman->convert(500), "D",      "500 -> D");
 is($roman->convert(275), "CCLXXV", "275 -> CCLXXV");
 is($roman->convert(622), "DCXXII", "622 -> DCXXII");
 is($roman->convert(999), "CMXCIX", "999 -> CMXCIX");
+
+# somewhere between 1000-3000
+is($roman->convert(1000), "M",        "1000 -> M");
+is($roman->convert(2000), "MM",       "2000 -> MM");
+is($roman->convert(3000), "MMM",      "3000 -> MMM");
+is($roman->convert(1999), "MCMXCIX",  "1999 -> MCMXCIX");
+is($roman->convert(2999), "MMCMXCIX", "2999 -> MMCMXCIX");
+is($roman->convert(2008), "MMVIII",   "2008 -> MMVIII");
