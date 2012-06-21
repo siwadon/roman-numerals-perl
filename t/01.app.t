@@ -135,7 +135,8 @@ is($roman->convert(19), "XIX",   "19 -> XIX");
 is($roman->convert(20), "XX",    "20 -> XX");
 
 # somewhere between 21-100
-is($roman->convert(50), "L",       "50 -> L");
-is($roman->convert(32), "XXXII",   "32 -> XXXII");
-is($roman->convert(87), "LXXXVII", "87 -> LXXXVII");
-is($roman->convert(99), "XCIX",    "99 -> XCIX");
+is($roman->convert(50),  "L",       "50  -> L");
+is($roman->convert(32),  "XXXII",   "32  -> XXXII");
+is($roman->convert(87),  "LXXXVII", "87  -> LXXXVII");
+is($roman->convert(99),  "XCIX",    "99  -> XCIX");
+is($roman->convert(100), "C",       "100 -> C");
