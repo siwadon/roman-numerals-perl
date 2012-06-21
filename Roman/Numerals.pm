@@ -99,6 +99,9 @@ sub to_roman {
 	elsif ($number == 9) {
 		$result = "IX";
 	}
+	elsif (grep(/^$number$/, (6..8))) {
+		$result = "V" . ("I" x ($number - 5));
+	}
 	elsif ($number == 5) {
 		$result = "V";
 	}
