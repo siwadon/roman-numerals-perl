@@ -50,8 +50,8 @@ is($roman->to_roman(3000), "MMM", "3000 -> MMM");
 
 # V, L, D cannot be repeated
 
-isnt($roman->to_roman(10),   "VV",  "10 -> VV");
-isnt($roman->to_roman(15),   "VVV", "15 -> VVV");
+isnt($roman->to_roman(10),   "VV",  "10   != VV");
+isnt($roman->to_roman(15),   "VVV", "15   != VVV");
 isnt($roman->to_roman(100),  "LL",  "100  != LL");
 isnt($roman->to_roman(150),  "LLL", "150  != LLL");
 isnt($roman->to_roman(1000), "DD",  "1000 != DD");
