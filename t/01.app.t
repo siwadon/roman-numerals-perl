@@ -109,3 +109,9 @@ is($roman->to_roman(8), "VIII", "8 -> VIII");
 is($roman->to_roman(60), "LX",   "60 -> LX");
 is($roman->to_roman(70), "LXX",  "70 -> LXX");
 is($roman->to_roman(80), "LXXX", "80 -> LXXX");
+
+# C can be added to D
+
+is($roman->to_roman(600), "DC",   "600 -> DC");
+is($roman->to_roman(700), "DCC",  "700 -> DCC");
+is($roman->to_roman(800), "DCCC", "800 -> DCCC");
