@@ -75,6 +75,9 @@ sub to_roman {
 	elsif ($number == 900) {
 		$result = "CM";
 	}
+	elsif (grep(/^$number$/, qw(600 700 800))) {
+		$result = "D" . ("C" x (($number - 500) / 100));
+	}
 	elsif ($number == 500) {
 		$result = "D";
 	}
