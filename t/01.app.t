@@ -127,3 +127,14 @@ is($roman->convert(7),  "VII",  "7  -> VII");
 is($roman->convert(8),  "VIII", "8  -> VIII");
 is($roman->convert(9),  "IX",   "9  -> IX");
 is($roman->convert(10), "X",    "10 -> X");
+
+is($roman->convert(11), "XI",    "11 -> XI");
+is($roman->convert(12), "XII",   "12 -> XII");
+is($roman->convert(13), "XIII",  "13 -> XIII");
+is($roman->convert(14), "XIV",   "14 -> XIV");
+is($roman->convert(15), "XV",    "15 -> XV");
+is($roman->convert(16), "XVI",   "16 -> XVI");
+is($roman->convert(17), "XVII",  "17 -> XVII");
+is($roman->convert(18), "XVIII", "18 -> XVIII");
+is($roman->convert(19), "XIX",   "19 -> XIX");
+is($roman->convert(20), "XX",    "20 -> XX");
