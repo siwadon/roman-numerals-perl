@@ -69,26 +69,26 @@ sub to_roman {
 		return 0;
 	}
 
-	if ($number == 1) {
-		$result = "I";
-	}
-	elsif ($number == 5) {
-		$result = "V";
-	}
-	elsif ($number == 10) {
-		$result = "X";
-	}
-	elsif ($number == 50) {
-		$result = "L";
-	}
-	elsif ($number == 100) {
-		$result = "C";
+	if ($number % 1000 == 0) {
+		$result = "M" x ($number / 1000);
 	}
 	elsif ($number == 500) {
 		$result = "D";
 	}
-	elsif ($number == 1000) {
-		$result = "M";
+	elsif ($number % 100 == 0) {
+		$result = "C" x ($number / 100);
+	}
+	elsif ($number == 50) {
+		$result = "L";
+	}
+	elsif ($number % 10 == 0) {
+		$result = "X" x ($number / 10);
+	}
+	elsif ($number == 5) {
+		$result = "V";
+	}
+	else {
+		$result = "I" x $number;
 	}
 
 	return $result;
