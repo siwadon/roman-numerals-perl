@@ -85,3 +85,7 @@ isnt($roman->to_roman(995), "VM", "995 != VM");
 isnt($roman->to_roman(50),  "LC", "50  != LC");
 isnt($roman->to_roman(450), "LD", "450 != LD");
 isnt($roman->to_roman(950), "LM", "950 != LM");
+
+# C cannot be subtracted
+
+isnt($roman->to_roman(500), "DM", "500 != DM");
