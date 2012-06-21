@@ -66,3 +66,8 @@ is($roman->to_roman(9), "IX", "9 -> IX");
 
 is($roman->to_roman(40), "XL", "40 -> XL");
 is($roman->to_roman(90), "XC", "90 -> XC");
+
+# C can be subtracted from D and M
+
+is($roman->to_roman(400), "CD", "400 -> CD");
+is($roman->to_roman(900), "CM", "900 -> CM");
