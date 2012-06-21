@@ -72,8 +72,14 @@ sub to_roman {
 	if ($number % 1000 == 0) {
 		$result = "M" x ($number / 1000);
 	}
+	elsif ($number == 900) {
+		$result = "CM";
+	}
 	elsif ($number == 500) {
 		$result = "D";
+	}
+	elsif ($number == 400) {
+		$result = "CD";
 	}
 	elsif ($number % 100 == 0) {
 		$result = "C" x ($number / 100);
