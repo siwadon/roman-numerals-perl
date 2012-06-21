@@ -140,3 +140,9 @@ is($roman->convert(32),  "XXXII",   "32  -> XXXII");
 is($roman->convert(87),  "LXXXVII", "87  -> LXXXVII");
 is($roman->convert(99),  "XCIX",    "99  -> XCIX");
 is($roman->convert(100), "C",       "100 -> C");
+
+# somewhere between 101-999
+is($roman->convert(500), "D",      "500 -> D");
+is($roman->convert(275), "CCLXXV", "275 -> CCLXXV");
+is($roman->convert(622), "DCXXII", "622 -> DCXXII");
+is($roman->convert(999), "CMXCIX", "999 -> CMXCIX");
