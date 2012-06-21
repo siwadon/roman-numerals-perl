@@ -62,18 +62,18 @@ isnt($roman->to_roman(1500), "DDD", "1500 != DDD");
 is($roman->to_roman(4), "IV", "4 -> IV");
 is($roman->to_roman(9), "IX", "9 -> IX");
 
-isnt($roman->to_roman(49),  "IL", "49  != IL");
-isnt($roman->to_roman(99),  "IC", "99  != IC");
-isnt($roman->to_roman(499), "ID", "499 != ID");
-isnt($roman->to_roman(999), "IM", "999 != IM");
+isnt($roman->convert(49),  "IL", "49  != IL");
+isnt($roman->convert(99),  "IC", "99  != IC");
+isnt($roman->convert(499), "ID", "499 != ID");
+isnt($roman->convert(999), "IM", "999 != IM");
 
 # X can be subtracted from L and C only
 
 is($roman->to_roman(40), "XL", "40 -> XL");
 is($roman->to_roman(90), "XC", "90 -> XC");
 
-isnt($roman->to_roman(490), "XD", "490 != XD");
-isnt($roman->to_roman(990), "XM", "990 != XM");
+isnt($roman->convert(490), "XD", "490 != XD");
+isnt($roman->convert(990), "XM", "990 != XM");
 
 # C can be subtracted from D and M
 
@@ -82,11 +82,11 @@ is($roman->to_roman(900), "CM", "900 -> CM");
 
 # V cannot be subtracted
 
-isnt($roman->to_roman(5),   "VX", "5   != VX");
-isnt($roman->to_roman(45),  "VL", "45  != VL");
-isnt($roman->to_roman(95),  "VC", "95  != VC");
-isnt($roman->to_roman(495), "VD", "495 != VD");
-isnt($roman->to_roman(995), "VM", "995 != VM");
+isnt($roman->to_roman(5),  "VX", "5   != VX");
+isnt($roman->convert(45),  "VL", "45  != VL");
+isnt($roman->convert(95),  "VC", "95  != VC");
+isnt($roman->convert(495), "VD", "495 != VD");
+isnt($roman->convert(995), "VM", "995 != VM");
 
 # L cannot be subtracted
 
