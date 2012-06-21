@@ -64,7 +64,7 @@ Parameter can be only
 sub to_roman {
 	my ($self, $number) = @_;
 
-	if ($number <= 0 or $number > 3000) {
+	if ($number < 0 or $number > 3000) {
 		return 0;
 	}
 
@@ -102,6 +102,23 @@ sub to_roman {
 	);
 
 	return $roman{$number};
+}
+
+sub convert {
+	my ($self, $number) = @_;
+
+	if ($number <= 0 or $number > 3000) {
+		return 0;
+	}
+
+	my @digits = $self->get_place_values($number);
+	my $result = "";
+
+	foreach $digit (@digits) {
+		$result .= $self->to_roman($digit);
+	}
+
+	return $result;
 }
 
 1;
