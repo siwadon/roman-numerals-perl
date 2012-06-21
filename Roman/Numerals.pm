@@ -87,11 +87,11 @@ sub to_roman {
 	elsif ($number == 90) {
 		$result = "XC";
 	}
-	elsif ($number == 50) {
-		$result = "L";
-	}
 	elsif (grep(/^$number$/, qw(60 70 80))) {
 		$result = "L" . ("X" x (($number - 50) / 10));
+	}
+	elsif ($number == 50) {
+		$result = "L";
 	}
 	elsif ($number == 40) {
 		$result = "XL";
