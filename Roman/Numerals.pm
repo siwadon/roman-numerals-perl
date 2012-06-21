@@ -63,62 +63,45 @@ Parameter can be only
 
 sub to_roman {
 	my ($self, $number) = @_;
-	my $result = "";
 
 	if ($number <= 0 or $number > 3000) {
 		return 0;
 	}
 
-	if ($number % 1000 == 0) {
-		$result = "M" x ($number / 1000);
-	}
-	elsif ($number == 900) {
-		$result = "CM";
-	}
-	elsif (grep(/^$number$/, qw(600 700 800))) {
-		$result = "D" . ("C" x (($number - 500) / 100));
-	}
-	elsif ($number == 500) {
-		$result = "D";
-	}
-	elsif ($number == 400) {
-		$result = "CD";
-	}
-	elsif ($number % 100 == 0) {
-		$result = "C" x ($number / 100);
-	}
-	elsif ($number == 90) {
-		$result = "XC";
-	}
-	elsif (grep(/^$number$/, qw(60 70 80))) {
-		$result = "L" . ("X" x (($number - 50) / 10));
-	}
-	elsif ($number == 50) {
-		$result = "L";
-	}
-	elsif ($number == 40) {
-		$result = "XL";
-	}
-	elsif ($number % 10 == 0) {
-		$result = "X" x ($number / 10);
-	}
-	elsif ($number == 9) {
-		$result = "IX";
-	}
-	elsif (grep(/^$number$/, (6..8))) {
-		$result = "V" . ("I" x ($number - 5));
-	}
-	elsif ($number == 5) {
-		$result = "V";
-	}
-	elsif ($number == 4) {
-		$result = "IV";
-	}
-	else {
-		$result = "I" x $number;
-	}
+	my %roman = (
+		'3000' => "MMM",
+		'2000' => "MM",
+		'1000' => "M",
+		'900'  => "CM",
+		'800'  => "DCCC",
+		'700'  => "DCC",
+		'600'  => "DC",
+		'500'  => "D",
+		'400'  => "CD",
+		'300'  => "CCC",
+		'200'  => "CC",
+		'100'  => "C",
+		'90'   => "XC",
+		'80'   => "LXXX",
+		'70'   => "LXX",
+		'60'   => "LX",
+		'50'   => "L",
+		'40'   => "XL",
+		'30'   => "XXX",
+		'20'   => "XX",
+		'10'   => "X",
+		'9'    => "IX",
+		'8'    => "VIII",
+		'7'    => "VII",
+		'6'    => "VI",
+		'5'    => "V",
+		'4'	   => "IV",
+		'3'    => "III",
+		'2'    => "II",
+		'1'    => "I"
+	);
 
-	return $result;
+	return $roman{$number};
 }
 
 1;
