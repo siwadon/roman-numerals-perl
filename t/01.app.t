@@ -9,6 +9,8 @@ my $expect = ();
 
 isa_ok($roman, "Roman::Numerals");
 
+# Splitting Arabic numbers into each digit multiply by its place value
+
 @got    = $roman->get_place_values('0');
 @expect = (0);
 is_deeply(\@got, \@expect, "0   is (0)");
@@ -24,6 +26,8 @@ is_deeply(\@got, \@expect, "50  is (50, 0)");
 @got    = $roman->get_place_values('234');
 @expect = (200, 30, 4);
 is_deeply(\@got, \@expect, "200 is (200, 30, 4)");
+
+# Basic Roman symbols
 
 is($roman->to_roman(1),    "I", "1    -> I");
 is($roman->to_roman(5),    "V", "5    -> V");
