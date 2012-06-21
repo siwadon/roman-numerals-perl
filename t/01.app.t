@@ -67,10 +67,13 @@ isnt($roman->to_roman(99),  "IC", "99  != IC");
 isnt($roman->to_roman(499), "ID", "499 != ID");
 isnt($roman->to_roman(999), "IM", "999 != IM");
 
-# X can be subtracted from L and C
+# X can be subtracted from L and C only
 
 is($roman->to_roman(40), "XL", "40 -> XL");
 is($roman->to_roman(90), "XC", "90 -> XC");
+
+isnt($roman->to_roman(490), "XD", "490 != XD");
+isnt($roman->to_roman(990), "XM", "990 != XM");
 
 # C can be subtracted from D and M
 
