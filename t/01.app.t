@@ -61,3 +61,8 @@ isnt($roman->to_roman(1500), "DDD", "1500 != DDD");
 
 is($roman->to_roman(4), "IV", "4 -> IV");
 is($roman->to_roman(9), "IX", "9 -> IX");
+
+# X can be subtracted from L and C
+
+is($roman->to_roman(40), "XL", "40 -> XL");
+is($roman->to_roman(90), "XC", "90 -> XC");
