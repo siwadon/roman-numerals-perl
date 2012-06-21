@@ -84,8 +84,14 @@ sub to_roman {
 	elsif ($number % 10 == 0) {
 		$result = "X" x ($number / 10);
 	}
+	elsif ($number == 9) {
+		$result = "IX";
+	}
 	elsif ($number == 5) {
 		$result = "V";
+	}
+	elsif ($number == 4) {
+		$result = "IV";
 	}
 	else {
 		$result = "I" x $number;
