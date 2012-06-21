@@ -97,3 +97,9 @@ isnt($roman->to_roman(950), "LM", "950 != LM");
 # C cannot be subtracted
 
 isnt($roman->to_roman(500), "DM", "500 != DM");
+
+# I can be added to V
+
+is($roman->to_roman(6), "VI",   "6 -> VI");
+is($roman->to_roman(7), "VII",  "7 -> VII");
+is($roman->to_roman(8), "VIII", "8 -> VIII");
