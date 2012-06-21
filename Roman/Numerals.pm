@@ -64,10 +64,6 @@ Parameter can be only
 sub to_roman {
 	my ($self, $number) = @_;
 
-	if ($number < 0 or $number > 3000) {
-		return 0;
-	}
-
 	my %roman = (
 		'3000' => "MMM",
 		'2000' => "MM",
