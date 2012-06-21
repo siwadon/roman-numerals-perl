@@ -47,3 +47,12 @@ is($roman->to_roman(200),  "CC",  "200  -> CC");
 is($roman->to_roman(300),  "CCC", "300  -> CCC");
 is($roman->to_roman(2000), "MM",  "2000 -> MM");
 is($roman->to_roman(3000), "MMM", "3000 -> MMM");
+
+# V, L, D cannot be repeated
+
+isnt($roman->to_roman(10),   "VV",  "10 -> VV");
+isnt($roman->to_roman(15),   "VVV", "15 -> VVV");
+isnt($roman->to_roman(100),  "LL",  "100  != LL");
+isnt($roman->to_roman(150),  "LLL", "150  != LLL");
+isnt($roman->to_roman(1000), "DD",  "1000 != DD");
+isnt($roman->to_roman(1500), "DDD", "1500 != DDD");
